@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="admin-styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Admin Panel</h1>
+            <nav>
+                <ul>
+                    <li><a href="#edit-content">Edit Content</a></li>
+                    <li><a href="#upload-images">Upload Images</a></li>
+                    <li><a href="../index.html">Back to Website</a></li> <!-- 상위 폴더로 이동하여 웹사이트로 돌아가는 링크 -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section id="edit-content">
+        <div class="container">
+            <h2>Edit Content</h2>
+            <!-- 관리자가 웹사이트 내용을 수정할 수 있는 폼이나 에디터를 추가 -->
+            <form id="contentForm" method="POST" action="save_content.php">
+                <label for="about">About Me:</label><br>
+                <textarea id="about" name="about" rows="4" cols="50"></textarea><br><br>
+                <button type="submit">Save Content</button>
+            </form>
+        </div>
+    </section>
+    
+    <section id="upload-images">
+        <div class="container">
+            <h2>Upload Images</h2>
+            <form id="imageUploadForm" enctype="multipart/form-data" method="POST" action="upload_image.php">
+                <label for="image">Choose Image:</label>
+                <input type="file" id="image" name="image" accept="image/*" required>
+                <button type="submit">Upload</button>
+            </form>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 PortfolioDD. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="admin-script.js"></script>
+</body>
+</html>
